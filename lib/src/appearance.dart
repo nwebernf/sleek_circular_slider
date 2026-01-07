@@ -25,7 +25,7 @@ class CircularSliderAppearance {
   static const double _defaultShadowMaxOpacity = 0.2;
   static const Color _defaultDotColor = Colors.white;
   static const Color _defaultDotStrokeColor = Colors.white;
-  static const Color _defaultDotStrokeWidth = 0.0;
+  static const double _defaultDotStrokeWidth = 0.0;
 
   String _defaultPercentageModifier(double value) {
     final roundedValue = (value).ceil().toInt().toString();
@@ -104,7 +104,7 @@ class CircularSliderAppearance {
       _customShadowMaxOpacity ?? _defaultShadowMaxOpacity;
   double? get shadowStep => _customShadowStep;
   Color get dotColor => _customDotColor ?? _defaultDotColor;
-  Color get dotStrokeColor => _customDotStrokeColor ?? _defualtDotStrokeColor;
+  Color get dotStrokeColor => _customDotStrokeColor ?? _defaultDotStrokeColor;
   double get dotStrokeWidth => _customDotStrokeWidth ?? _defaultDotStrokeWidth;
 
   String? get _topLabelText => infoProperties?.topLabelText;
