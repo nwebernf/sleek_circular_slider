@@ -24,6 +24,8 @@ class CircularSliderAppearance {
   static const Color _defaultShadowColor = Color.fromRGBO(44, 87, 192, 1.0);
   static const double _defaultShadowMaxOpacity = 0.2;
   static const Color _defaultDotColor = Colors.white;
+  static const Color _defaultDotStrokeColor = Colors.white;
+  static const Color _defaultDotStrokeWidth = 0.0;
 
   String _defaultPercentageModifier(double value) {
     final roundedValue = (value).ceil().toInt().toString();
@@ -80,6 +82,8 @@ class CircularSliderAppearance {
   double? get _customShadowMaxOpacity => customColors?.shadowMaxOpacity;
   double? get _customShadowStep => customColors?.shadowStep;
   Color? get _customDotColor => customColors?.dotColor;
+  Color? get _customDotStrokeColor => customColors?.dotStrokeColor;
+  double? get _customDotStrokeWidth => customColors?.dotStrokeWidth;
   bool? get _hideShadow => customColors?.hideShadow;
 
   Color get trackColor => _customTrackColor ?? _defaultTrackColor;
@@ -100,6 +104,8 @@ class CircularSliderAppearance {
       _customShadowMaxOpacity ?? _defaultShadowMaxOpacity;
   double? get shadowStep => _customShadowStep;
   Color get dotColor => _customDotColor ?? _defaultDotColor;
+  Color get dotStrokeColor => _customDotStrokeColor ?? _defualtDotStrokeColor;
+  double get dotStrokeWidth => _customDotStrokeWidth ?? _defaultDotStrokeWidth;
 
   String? get _topLabelText => infoProperties?.topLabelText;
   String? get _bottomLabelText => infoProperties?.bottomLabelText;
@@ -183,6 +189,8 @@ class CustomSliderColors {
   final double? shadowMaxOpacity;
   final double? shadowStep;
   final Color? dotColor;
+  final Color? dotStrokeColor;
+  final double? dotStrokeWidth;
 
   CustomSliderColors({
     this.trackColor,
@@ -198,6 +206,8 @@ class CustomSliderColors {
     this.shadowMaxOpacity,
     this.shadowStep,
     this.dotColor,
+    this.dotStrokeColor,
+    this.dotStrokeWidth,
     this.dynamicGradient = false,
   });
 }
