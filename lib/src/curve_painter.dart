@@ -176,9 +176,16 @@ class _CurvePainter extends CustomPainter {
   }
 
   void _drawHandler(Canvas canvas) {
-    final handlerPaint = Paint()..color = appearance.dotColor;
+    var handlerPaint = Paint()..color = appearance.dotColor;
+    handlerPaint.style = PaintingStyle.fill;
     final handlerPosition = _calculateHandlerPosition();
+
+    var handlerStrokePaint = Paint()..color = appearance.dotStrokeColor;
+    handlerStrokePaint.style = PaintingStyle.stroke;
+    handlerStrokePaint.strokeWidth = appearance.dotStrokeWidth;
+
     canvas.drawCircle(handlerPosition, appearance.handlerSize, handlerPaint);
+    canvas.drawCircle(handlerPosition, appearance.handlerSize, handlerStrokePaint);
   }
 
   Offset _calculateHandlerPosition() {
