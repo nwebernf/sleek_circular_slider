@@ -184,8 +184,26 @@ class _CurvePainter extends CustomPainter {
     handlerStrokePaint.style = PaintingStyle.stroke;
     handlerStrokePaint.strokeWidth = appearance.dotStrokeWidth;
 
+    if (appearance.showDotShadow) {
+      canvas.drawShadow(
+        Path()..addOval(
+          Rect.fromCircle(
+            center: handlerPosition,
+            radius: appearance.handlerSize * 1.1,
+          ),
+        ),
+        appearance.dotShadowColor.withValues(alpha: 0.7),
+        4.0, // Shadow elevation
+        true, // Whether the shadow is transparent
+      );
+    }
+
     canvas.drawCircle(handlerPosition, appearance.handlerSize, handlerPaint);
-    canvas.drawCircle(handlerPosition, appearance.handlerSize, handlerStrokePaint);
+    canvas.drawCircle(
+      handlerPosition,
+      appearance.handlerSize,
+      handlerStrokePaint,
+    );
   }
 
   Offset _calculateHandlerPosition() {

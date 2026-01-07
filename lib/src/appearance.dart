@@ -26,6 +26,8 @@ class CircularSliderAppearance {
   static const Color _defaultDotColor = Colors.white;
   static const Color _defaultDotStrokeColor = Colors.white;
   static const double _defaultDotStrokeWidth = 0.0;
+  static const bool _defaultShowDotShadow = false;
+  static const Color _defaultDotShadowColor = Colors.black;
 
   String _defaultPercentageModifier(double value) {
     final roundedValue = (value).ceil().toInt().toString();
@@ -84,6 +86,8 @@ class CircularSliderAppearance {
   Color? get _customDotColor => customColors?.dotColor;
   Color? get _customDotStrokeColor => customColors?.dotStrokeColor;
   double? get _customDotStrokeWidth => customColors?.dotStrokeWidth;
+  bool? get _customShowDotShadow => customColors?.showDotShadow;
+  Color? get _customDotShadowColor => customColors?.dotShadowColor;
   bool? get _hideShadow => customColors?.hideShadow;
 
   Color get trackColor => _customTrackColor ?? _defaultTrackColor;
@@ -106,6 +110,8 @@ class CircularSliderAppearance {
   Color get dotColor => _customDotColor ?? _defaultDotColor;
   Color get dotStrokeColor => _customDotStrokeColor ?? _defaultDotStrokeColor;
   double get dotStrokeWidth => _customDotStrokeWidth ?? _defaultDotStrokeWidth;
+  bool get showDotShadow => _customShowDotShadow ?? _defaultShowDotShadow;
+  Color get dotShadowColor => _customDotShadowColor ?? _defaultDotShadowColor;
 
   String? get _topLabelText => infoProperties?.topLabelText;
   String? get _bottomLabelText => infoProperties?.bottomLabelText;
@@ -191,6 +197,8 @@ class CustomSliderColors {
   final Color? dotColor;
   final Color? dotStrokeColor;
   final double? dotStrokeWidth;
+  final bool? showDotShadow;
+  final Color? dotShadowColor;
 
   CustomSliderColors({
     this.trackColor,
@@ -208,6 +216,8 @@ class CustomSliderColors {
     this.dotColor,
     this.dotStrokeColor,
     this.dotStrokeWidth,
+    this.showDotShadow,
+    this.dotShadowColor,
     this.dynamicGradient = false,
   });
 }
