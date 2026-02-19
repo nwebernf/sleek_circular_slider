@@ -297,7 +297,9 @@ class SleekCircularSliderState extends State<SleekCircularSlider>
   }
 
   bool _onPanDown(Offset details) {
-    if (_painter == null || _interactionEnabled == false) {
+    if (_painter == null ||
+        _painter!.center == null ||
+        _interactionEnabled == false) {
       return false;
     }
     RenderBox renderBox = context.findRenderObject() as RenderBox;
